@@ -1,0 +1,213 @@
+/* ==========================================
+   Import Fonts & Global Resets
+   ========================================== */
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Rajdhani", sans-serif;
+}
+
+/* ==========================================
+   CSS Variables (Theme Colors)
+   ========================================== */
+:root {
+    --bg-color: #0a0a0a;
+    --card-bg-color: #1e2328;
+    --text-color: #f0e6d2;
+    --text-secondary-color: #a09b8c;
+    --accent-color: #c89b3c;
+    --error-color: #ff4c4c;
+}
+
+/* ==========================================
+   Base Styles
+   ========================================== */
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    padding: 20px;
+}
+
+/* ==========================================
+   Header & Controls
+   ========================================== */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--accent-color);
+}
+
+header h1 {
+    font-size: 2.5rem;
+    font-weight: 900;
+}
+
+.controls-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+/* Search Input Styles */
+#searchInput {
+    width: 100%;
+    max-width: 500px;
+    padding: 12px 20px;
+    border: 2px solid var(--accent-color);
+    background-color: var(--card-bg-color);
+    color: white;
+    border-radius: 15px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    outline: none;
+    transition: box-shadow 0.3s ease;
+}
+
+#searchInput:focus {
+    box-shadow: 0 0 10px rgba(200, 155, 60, 0.5);
+}
+
+/* Filter Buttons Styles */
+#filterButtons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.filter-btn {
+    padding: 8px 16px;
+    background-color: var(--card-bg-color);
+    color: var(--accent-color);
+    border: 1px solid var(--accent-color);
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.2s ease-in-out;
+}
+
+.filter-btn:hover, 
+.filter-btn.active {
+    background-color: var(--accent-color);
+    color: #0a0a0c;
+}
+
+/* ==========================================
+   Champions Grid Layout
+   ========================================== */
+.champions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Champion Card Components */
+.champion-card {
+    background-color: var(--card-bg-color);
+    border: 1px solid #333;
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.champion-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(200, 155, 60, 0.4);
+    border-color: var(--accent-color);
+}
+
+.champion-icon {
+    width: 100%;
+    height: auto;
+    border-bottom: 2px solid var(--accent-color);
+}
+
+.champion-info {
+    width: 100%;
+    height: auto;
+    padding: 15px;
+    /* Removed redundant border-bottom here as the image already has one */
+}
+
+.champion-name {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    margin-bottom: 5px;
+}
+
+.champion-role {
+    font-size: 1.1em;
+    color: var(--text-secondary-color);
+}
+
+/* Utility Classes for Errors/Empty States */
+.no-results, 
+.error {
+    text-align: center;
+    color: var(--error-color);
+    font-size: 1.2rem;
+    grid-column: 1 / -1;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* ==========================================
+   Modal Styles
+   ========================================== */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    border: 2px solid var(--accent-color);
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 600px;
+    width: 90%;
+    text-align: center;
+    position: relative;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 30px;
+    cursor: pointer;
+    color: var(--accent-color);
+    transition: color 0.2s ease;
+}
+
+.close-btn:hover {
+    color: var(--error-color);
+}
+
+#modalSplash {
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}

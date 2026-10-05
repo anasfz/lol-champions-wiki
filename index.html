@@ -1,0 +1,60 @@
+<!-- 
+  Project: League of Legends Champions Explorer
+  Description: Main HTML structure for the application.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>League of Legends Champions</title>
+    <!-- Link to external stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1>League of Legends Champions</h1>
+    </header>
+
+    <!-- Controls Section: Search and Filters -->
+    <section class="controls-section">
+        <!-- Search Input -->
+        <input type="text" id="searchInput" placeholder="Search champion...">
+
+        <!-- Role Filter Buttons -->
+        <div id="filterButtons">
+            <button class="filter-btn active" data-role="all">All</button>
+            <button class="filter-btn" data-role="assassin">Assassin</button>
+            <button class="filter-btn" data-role="fighter">Fighter</button>
+            <button class="filter-btn" data-role="mage">Mage</button>
+            <button class="filter-btn" data-role="marksman">Marksman</button>
+            <button class="filter-btn" data-role="support">Support</button>
+            <button class="filter-btn" data-role="tank">Tank</button>
+        </div>
+    </section>
+
+    <!-- Main Content: Champions Grid -->
+    <main id="championsGrid" class="champions-grid">
+        <!-- Champion cards will be injected here dynamically via JavaScript -->
+    </main>
+
+    <!-- Champion Details Modal -->
+    <div id="championModal" class="modal hidden">
+        <div class="modal-content">
+            <!-- Close Modal Button -->
+            <span id="closeModal" class="close-btn">&times;</span>
+            
+            <!-- Champion Details -->
+            <img src="" alt="Champion Splash Art" id="modalSplash">
+            <h2 id="modalName">Champion Name</h2>
+            <h3 id="modalTitle">Champion Title</h3>
+            <div id="modalTags" class="tags"></div>
+            <p id="modalBlurb">Short description goes here...</p>
+        </div>
+    </div>
+
+    <!-- Link to external JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>
